@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,9 +24,19 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('users')->name('users.')->group(function() {
-    Route::get('/',[UserController::class,'index'])->name('index');
+Route::prefix('sanpham')->name('sanpham.')->group(function() {
+    Route::get('/',[ProductController::class,'index'])->name('index');
 
-    Route::get('/add',[UserController::class,'add'])->name('add');
+    Route::get('/add',[ProductController::class,'add'])->name('add');
+
+    Route::post('/add',[ProductController::class,'postAdd'])->name('postAdd');
+
+    Route::get('/edit/{id}',[ProductController::class,'getEdit'])->name('getEdit');
+
+    Route::post('/update',[ProductController::class,'postEdit'])->name('postEdit');
+
+    Route::get('/delete/{id}',[ProductController::class,'delete'])->name('delete');
+
+
 
 });

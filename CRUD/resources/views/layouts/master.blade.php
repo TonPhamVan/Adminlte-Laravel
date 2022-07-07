@@ -22,8 +22,9 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    @yield('add-user')
-    @yield('list-user')
+    @yield('add-product')
+    @yield('list-product')
+    @yield('edit-product')
 
   </div>
   <!-- /.content-wrapper -->
@@ -42,10 +43,10 @@
 <!-- jQuery -->
 <script src="{{asset('js/app.js')}}"></script>
 
-<script>
+{{-- <script>
 $(function () {
   bsCustomFileInput.init();
 });
-</script>
+</script> --}}
 </body>
 </html>
