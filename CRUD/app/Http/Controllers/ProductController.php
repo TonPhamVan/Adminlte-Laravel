@@ -41,7 +41,7 @@ class ProductController extends Controller
         $dataInsert = [
             $request->name,
             $request->Price,
-
+            date('Y-m-d H:i:s')
         ];
         $this->sanpham->addProduct($dataInsert);
 
@@ -79,7 +79,7 @@ class ProductController extends Controller
         $dataUpdate = [
             $request->name,
             $request->Price,
-
+            date('Y-m-d H:i:s')
         ];
         $this->sanpham->updateProduct($dataUpdate,$id);
 

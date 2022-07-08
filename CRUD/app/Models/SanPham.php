@@ -11,19 +11,20 @@ class SanPham extends Model
     use HasFactory;
     protected $table = 'sanpham';
     public function getAllProduct() {
-        return SanPham::paginate(1);
+        return SanPham::paginate(4);
     }
     public function searchProduct($searchProduct) {
         return DB::table($this->table)
         ->select('*')
         ->where('name','like','%'.$searchProduct.'%')
-        ->paginate(1);
+        ->paginate(4);
     }
     public function addProduct($data){
         return DB::table($this->table)
         ->insert([
             'name'=> $data[0],
             'Price'=>$data[1],
+            'create_at'=>$data[2]
         ]);
     }
     public function getDetail($id) {
@@ -38,6 +39,8 @@ class SanPham extends Model
         ->update([
             'name'=> $data[0],
             'Price'=>$data[1],
+            'update_at'=>$data[2]
+
         ]);
     }
     public function deleteProduct($id) {

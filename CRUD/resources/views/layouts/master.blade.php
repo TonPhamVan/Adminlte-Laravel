@@ -11,6 +11,7 @@
 
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
+
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   {{-- navbar --}}
